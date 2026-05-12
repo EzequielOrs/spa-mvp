@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="./src/style.css">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP SPA with contact form</title>
+</head>
+<body>
+    <!-- HEADER / HERO section -->
+    <header class="hero">
+        <div class="container">
+            <h1>MVP SPA with contact form</h1>
+            <p>Impulsamos a tu empresa con soluciones integrales en ambiente, seguridad y gestión.</p>
+            <a href="#contact" class="btn-primary">Escribinos</a>
+        </div>
+    </header>
+
+    <!-- SERVICES SECTION -->
+    <section class="services container">
+        <h2>Nuestros Servicios</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Gestión Ambiental</h3>
+                <ul>
+                    <li>Planes de evacuación</li>
+                    <li>Estudio de carga de fuego</li>
+                    <li>Estudios antisiniestrales</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Seguridad e Higiene</h3>
+                <ul>
+                    <li>Capacitaciones</li>
+                    <li>Trabajos en altura</li>
+                    <li>Mediciones laborales</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Proyectos - Capital Humano</h3>
+                <ul>
+                    <li>Consultoría estratégica</li>
+                    <li>Optimización organizacional</li>
+                    <li>Gestión integral</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOTIONS SECTION -->
+    <section class="promotions">
+        <div class="container">
+            <h2>Promociones</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <h4>Servicio de SeH Anual</h4>
+                    <p>Beneficios exclusivos para clientes anuales.</p>
+                </div>
+                <div class="promo-card">
+                    <h4>Descuentos por cliente</h4>
+                    <p>Bonificaciones por contratación continua.</p>
+                </div>
+                <div class="promo-card">
+                    <h4>Referidos</h4>
+                    <p>Programa de beneficios por recomendación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="contact container">
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
