@@ -21,20 +21,24 @@ function validate(data) {
 }
 
 //Submit button logic
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
+if (!form || !status) {
+  console.error('Required elements not found'); 
+} 
+else {
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    try {
+      const data = getFormData(form);
+      validate(data);
 
-  try {
-    const data = getFormData(form);
-    validate(data);
+      status.textContent = 'Enviado email...';
 
-    status.textContent = 'Enviado email...';
+      const result = await sendContactEmail(data);
 
-    const result = await sendContactEmail(data);
-
-    status.textContent = result.message;
-    form.reset();
-  } catch (error) {
-    status.textContent = error.message || 'Unexpected error';
-  }
-});
+      status.textContent = result.message;
+      form.reset();
+    } catch (error) {
+      status.textContent = error.message || 'Unexpected error';
+    }
+  });
+}
