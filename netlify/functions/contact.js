@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
-  port: Number(process.env.EMAIL_PORT || 587), //check
+  port: Number(process.env.EMAIL_PORT),
   secure: true,
   auth: {
     user: process.env.EMAIL_USER,
@@ -38,7 +38,7 @@ exports.handler = async function (event) {
 
     await transporter.sendMail({
       from: process.env.FROM_EMAIL,
-      to: env.TO_EMAIL,
+      to: process.env.TO_EMAIL,
       subject: 'Nuevo mensaje de contacto', //No subject field defined yet
       replyTo: email,
       text: `Name: ${name}
